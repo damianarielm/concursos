@@ -1,354 +1,382 @@
 % Concurso Auxiliar de 2da categoria
-% Estructuras de Datos y Algoritmos I
+% Programacion I
 % Damian Ariel Marotte
 
 # Enunciado
 
-Dadas las siguientes definiciones:
+Diseñe la funcion `sumanat`{.scheme} que toma dos *numeros naturales* y sin usar `+`{.scheme} devuelve un *natural* que es la suma de ambos.
 
-```C
-struct Empleado {
-    char* nombre, *direccion, *dni;
-    float sueldo;
-    struct Empleado* sig;
-};
+Tenga en cuenta la definicion dada en clase de los *numeros naturales*, sus constructores, y predicados para la definicion de la funcion pedida.
 
-struct Hash {
-    int tam;
-    ListaEmpleados *tabla;
-};
-```
+# Numeros naturales
 
-1. Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+Un *Natural* es:
 
-2. Diseñe una funcion que calcule el *indice radial* de una tabla hash. Se define el indice radial de una Tabla Hash como el numero de casillas de la tabla por el numero de elementos de la lista enlazada de mayor tamaño presente en la tabla.
+* `0`{.scheme}
+* `(add1 Natural)`{.scheme}
 
-# Estructuras de datos
-
-## estructuras.h
-
-```C
-typedef struct Empleado {
-    char* nombre, *direccion, *dni;
-    float sueldo;
-    struct Empleado* sig;
-} Nodo;
-typedef Nodo* ListaEmpleados;
-
-struct Hash {
-    int tam;
-    struct Empleado* *tabla;
-};
-typedef struct Hash* TablaHash;
-```
 . . .
 
-## Ejercicio 1
+Predicados:
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+* `zero?     ; Reconoce al natural 0`{.scheme}
+* `positive? ; Reconoce naturales construidos con add1`{.scheme}
 
-# Programa princial
+. . .
 
-## main.c
+Selector:
 
-```C
-#include "estructuras.h"
+* `sub1      ; Devuelve el predecesor de un numero natural`{.scheme}
 
-void main() {
-}
+# Receta
+
+1. Diseño de datos
+
+2. Signatura
+
+3. Declaracion de proposito
+
+4. Ejemplos
+
+5. Codigo
+
+6. Testing
+
+7. Correccion
+
+# Diseño de datos
+
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
-## Ejercicio 1
+# Signatura
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
 
-# Longitud de una lista
 
-## main.c
 
-```C
-#include "estructuras.h"
 
-// Funcion que dada una lista, retorna la cantidad de elementos que tiene.
-int longitud(ListaEmpleados lista) {
-}
 
-void main() {
-}
+;sumanat : Natural Natural -> Natural
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
-## Ejercicio 1
+# Declaracion de proposito
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
 
-# Casos de prueba
 
-## main.c
 
-```C
-#include <assert.h> // assert
-#include <stdlib.h> // NULL
-#include "estructuras.h"
 
-// Funcion que dada una lista, retorna la cantidad de elementos que tiene.
-int longitud(ListaEmpleados lista) {
-}
 
-void main() {
-    assert(longitud(NULL) == 0); // Longitud de una lista vacia.
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
 
-    struct Empleado nodo1;
-    nodo1.nombre = "Damian"; nodo1.dni = "31.116.234";
-    nodo1.sueldo = 4000; nodo1.sig = NULL;
-    assert(longitud(&nodo1) == 1); // Longitud de una lista unitaria.
-}
+
+
+
+
+
+
+
+
+
+
 ```
 
-# Caso base
+# Ejemplos
 
-## main.c
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
 
-```C
-// Funcion que dada una lista, retorna la cantidad de elementos que tiene.
-int longitud(ListaEmpleados lista) {
-    if (lista == NULL) // Lista vacia.
-        return 0;
-}
+
+
+
+
+
+
+
+
+
+
 ```
 
-## Ejercicio 1
+# Codigo
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
 
-# Caso recursivo
 
-## main.c
 
-```C
-// Funcion que dada una lista, retorna la cantidad de elementos que tiene.
-int longitud(ListaEmpleados lista) {
-    if (lista == NULL) // Lista vacia.
-        return 0;
-    else
-        return 1 + longitud(lista->sig);
-}
+)
+
+
+
+
+
+
 ```
 
-## Ejercicio 1
+# Codigo
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)                                ] ; caso base
+          [(positive? n)                            ] ; caso recursivo
+    )
+)
 
-# Cantidad de elementos de una tabla hash
 
-## main.c
 
-```C
-// Funcion que dada una tabla hash, retorna su cantidad de elementos.
-int elementos(TablaHash hash) {
-}
 
-void main() {
-    assert(longitud(NULL) == 0); // Longitud de una lista vacia.
 
-    struct Empleado nodo1;
-    nodo1.nombre = "Damian"; nodo1.dni = "31.116.234";
-    nodo1.sueldo = 4000; nodo1.sig = NULL;
-    assert(longitud(&nodo1) == 1); // Longitud de una lista unitaria.
-}
+
 ```
 
-## Ejercicio 1
+# Codigo
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n)                            ] ; caso recursivo
+    )
+)
 
-# Casos de prueba
 
-## main.c
 
-```C
-// Funcion que dada una una tabla hash, retorna su cantidad de elementos.
-int elementos(TablaHash hash) {
-}
 
-void main() {
-    assert(longitud(NULL) == 0); // Longitud de una lista vacia.
 
-    struct Empleado nodo1;
-    nodo1.nombre = "Damian"; nodo1.dni = "31.116.234";
-    nodo1.sueldo = 4000; nodo1.sig = NULL;
-    assert(longitud(&nodo1) == 1); // Longitud de una lista unitaria.
 
-    struct Hash docentes;
-    docentes.tam = 5;
-    docentes.tabla = malloc(sizeof(struct Empleado*) * docentes.tam);
-    docentes.tabla[0] = &nodo1; docentes.tabla[1] = &nodo1;
-    assert(elementos(&docentes) == 2); // Cantidad de elementos de una tabla con
-    free(docentes.tabla);              // dos listas unitarias.
-}
 ```
 
-# Cantidad de elementos de una tabla hash
+# Codigo
 
-## main.c
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat n m)              ] ; caso recursivo
+    )
+)
 
-```C
-// Funcion que dada una tabla hash, retorna su cantidad de elementos.
-int elementos(TablaHash hash) {
-    assert(hash != NULL); // Validamos la entrada
 
-    int cantidad = 0;
 
-    // Recorremos el arreglo
-    for(int i = 0; i < hash->tam; i++)
-        cantidad += longitud(hash->tabla[i]);
 
-    return cantidad;
-}
+
+
 ```
 
-## Ejercicio 1
+# Codigo
 
-Escriba una funcion que retorne la cantidad de elementos que se almacenan en la tabla.
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat (sub1 n) m)       ] ; caso recursivo
+    )
+)
 
-# Resumen
 
-## main.c
 
-```C
-// Funcion que dada una lista, retorna la cantidad de elementos que tiene.
-int longitud(ListaEmpleados lista) {
-    if (lista == NULL) // Lista vacia.
-        return 0;
-    else
-        return 1 + longitud(lista->sig);
-}
-// Funcion que dada una tabla hash, retorna su cantidad de elementos.
-int elementos(TablaHash hash) {
-    assert(hash != NULL); // Validamos la entrada.
 
-    int cantidad = 0;
-    // Recorremos el arreglo
-    for(int i = 0; i < hash->tam; i++)
-        cantidad += longitud(hash->tabla[i]);
 
-    return cantidad;
-}
+
 ```
 
-# Programa princial
+# Codigo
 
-## main.c
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat (sub1 n) (add1 m))] ; caso recursivo
+    )
+)
 
-```C
-#include <assert.h> // assert
-#include <stdlib.h> // NULL
-#include "estructuras.h"
 
-// ...
 
-void main() {
-    // ...
-}
+
+
+
 ```
 
-## Ejercicio 2
+# Codigo
 
-Diseñe una funcion que calcule el *indice radial* de una tabla hash. Se define el indice radial de una Tabla Hash como el numero de casillas de la tabla por el numero de elementos de la lista enlazada de mayor tamaño presente en la tabla.
-
-# Indice radial
-
-## main.c
-
-```C
-#include <assert.h> // assert
-#include <stdlib.h> // NULL
-#include "estructuras.h"
-
-// ...
-
-// Funcion que dada una tabla hash, devuelve el indice radial.
-int radial(TablaHash hash) {
-}
-
-void main() {
-    // ...
-}
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat (sub1 n) (add1 m))] ; caso recursivo
+    )
+)
+(check-expect (sumanat 0 0) 0)
+(check-expect (sumanat 0 3) 3)
+(check-expect (sumanat 7 0) 7)
+(check-expect (sumanat 2 3) 5)
+(check-expect (sumanat 3 2) 9)
 ```
 
-## Ejercicio 2
+# Correccion
 
-Diseñe una funcion que calcule el *indice radial* de una tabla hash. Se define el indice radial de una Tabla Hash como el numero de casillas de la tabla por el numero de elementos de la lista enlazada de mayor tamaño presente en la tabla.
+Ran 5 tests.  
+1 of the 5 tests failed.  
 
-# Casos de prueba
+No signature violations.
 
-## main.c
+Check failures:  
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ Actual value **5** differs from **9**, the expected value.  
+*at line 19, column 0*
 
-```C
-#include <assert.h> // assert
-#include <stdlib.h> // NULL
-#include "estructuras.h"
-// ...
+# Correccion
 
-// Funcion que dada una tabla hash, devuelve el indice radial.
-int radial(TablaHash hash) {
-}
-
-void main() {
-    // ...
-    assert(radial(&docentes) == 5); // 5 casilleros, 2 listas unitarias
-}
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat (sub1 n) (add1 m))] ; caso recursivo
+    )
+)
+(check-expect (sumanat 0 0) 0)
+(check-expect (sumanat 0 3) 3)
+(check-expect (sumanat 7 0) 7)
+(check-expect (sumanat 2 3) 5)
+(check-expect (sumanat 3 2) 9)
 ```
 
-## Ejercicio 2
+# Correccion
 
-Diseñe una funcion que calcule el *indice radial* de una tabla hash. Se define el indice radial de una Tabla Hash como el numero de casillas de la tabla por el numero de elementos de la lista enlazada de mayor tamaño presente en la tabla.
-
-# Indice radial
-
-## main.c
-
-```C
-// Funcion que dada un tabla hash, devuelve el indice radial.
-int radial(TablaHash hash) {
-    assert(hash != NULL); // Validamos la entrada.
-
-    int maximo = 0;
-    // Recorremos el arreglo
-    for (int i = 0; i < hash->tam; i++) {
-        int temp = longitud(hash->tabla[i]);
-        if (temp > maximo) maximo = temp;
-    }
-
-    return hash->tam * maximo;
-}
+```{.numberLines .scheme}
+;n: Natural (Representa el primer sumando)
+;m: Natural (Representa el segundo sumando)
+;(sumanat 0 0) = 1 (Ambos 0)
+;(sumanat 0 3) = 3 (Primero 0)
+;(sumanat 7 0) = 7 (Segundo 0)
+;(sumanat 2 3) = 5 (Ninguno 0)
+;(sumanat 3 2) = 5 (Conmutatividad)
+;sumanat : Natural Natural -> Natural
+;Dados los numeros naturales n y m, devuelve el numero natural n + m
+(define (sumanat n m)
+    (cond [(zero? n)      m                         ] ; caso base
+          [(positive? n) (sumanat (sub1 n) (add1 m))] ; caso recursivo
+    )
+)
+(check-expect (sumanat 0 0) 0)
+(check-expect (sumanat 0 3) 3)
+(check-expect (sumanat 7 0) 7)
+(check-expect (sumanat 2 3) 5)
+(check-expect (sumanat 3 2) 5)
 ```
 
-## Ejercicio 2
+# Testing
 
-Diseñe una funcion que calcule el *indice radial* de una tabla hash. Se define el indice radial de una Tabla Hash como el numero de casillas de la tabla por el numero de elementos de la lista enlazada de mayor tamaño presente en la tabla.
-
-# Resumen
-
-## main.c
-
-```C
-int longitud(ListaEmpleados lista) {
-    if (lista == NULL) return 0;
-    else return 1 + longitud(lista->sig);
-}
-int elementos(TablaHash hash) {
-    assert(hash != NULL);
-    int cantidad = 0;
-    for(int i = 0; i < hash->tam; i++) cantidad += longitud(hash->tabla[i]);
-    return cantidad;
-}
-int radial(TablaHash hash) {
-    assert(hash != NULL);
-    int maximo = 0;
-    for (int i = 0; i < hash->tam; i++) {
-        int temp = longitud(hash->tabla[i]);
-        if (temp > maximo) maximo = temp;
-    }
-    return hash->tam * maximo;
-}
-```
+*All 5 test passed!*
