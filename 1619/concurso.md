@@ -7,19 +7,25 @@
 Diseñe la funcion `cortas`{.scheme} que tome una *una lista de strings* y sin
 usar devuelva una *lista* con aquellas palabras de longitud menor a 5.
 
-# Listas
+*Ejemplo:*
 
-Una *Lista de Strings* es:
+```{.scheme}
+(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+```
 
-* `'()`{.scheme}
-* `(cons String ListaDeStrings)`{.scheme}
+# Lista de strings
+
+Una *ListaDeStrings* es:
+
+* `Una lista vacia        '()`{.scheme}
+* `Una expresion del tipo (cons String ListaDeStrings)`{.scheme}
 
 . . .
 
 Predicados:
 
-* `cons?  ; Reconoce listas no vacias`{.scheme}
 * `empty? ; Reconoce unicamente la lista vacia`{.scheme}
+* `cons?  ; Reconoce listas no vacias`{.scheme}
 
 . . .
 
@@ -47,68 +53,426 @@ Selectores:
 # Diseño de datos
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 # Signatura
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 # Declaracion de proposito
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 # Ejemplos
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+
+
+
+
+
+
+
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+
+
+
+
+
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l)    ]                                   ; Caso base
+          [(cons? l)                                         ; Caso recursivo
+
+                                            ]
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)                                         ; Caso recursivo
+
+                                            ]
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (                                ) ; Caso verdadero
+                          (               ))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l)                  ) ; Caso verdadero
+                          (               ))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (               ))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+
+
+
+
+
 ```
 
 # Codigo
 
 ```{.numberLines .scheme}
-```
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
 
-# Correccion
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
 
-# Correccion
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
 
-```{.numberLines .scheme}
-```
 
-# Correccion
 
-```{.numberLines .scheme}
+
+
 ```
 
 # Testing
+
+```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+(check-expect (cortas '()) '())
+(check-expect (cortas (list "Palabras" "largas")) '())
+(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
+(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sim"))
+```
+
+# Correccion
+
+Ran 4 tests.  
+1 of the 4 tests failed.  
+
+No signature violations.
+
+Check failures:  
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ Actual value **(list "de" "sin")** differs from
+                            **(list "de" "sim")**, the expected value.  
+*at line 20, column 0*
+
+# Correccion
+
+```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+(check-expect (cortas '()) '())
+(check-expect (cortas (list "Palabras" "largas")) '())
+(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
+(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sim"))
+```
+
+# Correccion
+
+```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+(check-expect (cortas '()) '())
+(check-expect (cortas (list "Palabras" "largas")) '())
+(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
+(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sin"))
+```
+
+# Testing
+
+*All 4 test passed!*
+
+# Correccion
+
+```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+(check-expect (cortas '()) '())
+(check-expect (cortas (list "Palabras" "largas")) '())
+(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
+(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sin"))
+```
+
+# Correccion
+
+```{.numberLines .scheme}
+;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
+;cortas : ListaDeStrings -> ListaDeStrings
+;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
+;La lista devuelta preserva el orden relativo de los elementos en la lista original.
+(define (cortas l)
+    (cond [(empty? l) '()]                                   ; Caso base
+          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
+                          (cons (first l) (cortas (rest l))) ; Caso verdadero
+                          (cortas (rest l)))]                ; Caso falso
+    )
+)
+
+;(cortas '())                                            == '()
+;(cortas (list "Palabras" "largas"))                     == '()
+;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
+;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
+(check-expect (cortas '()) '())
+(check-expect (cortas (list "Palabras" "largas")) '())
+(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
+(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sin"))
+```
