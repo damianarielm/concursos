@@ -13,27 +13,6 @@ usar devuelva una *lista* con aquellas palabras de longitud menor a 5.
 (cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
 ```
 
-# Lista de strings
-
-Una *ListaDeStrings* es:
-
-* `Una lista vacia        '()`{.scheme}
-* `Una expresion del tipo (cons String ListaDeStrings)`{.scheme}
-
-. . .
-
-Predicados:
-
-* `empty? ; Reconoce unicamente la lista vacia`{.scheme}
-* `cons?  ; Reconoce listas no vacias`{.scheme}
-
-. . .
-
-Selectores:
-
-* `first  ; Devuelve el primer elemento de una lista`{.scheme}
-* `rest   ; Devuelve la lista sin su primer elemento`{.scheme}
-
 # Receta
 
 1. Diseño de datos
@@ -49,6 +28,33 @@ Selectores:
 6. Testing
 
 7. Correccion
+
+# Diseño de datos
+
+Una *ListaDeStrings* es:
+
+* `Una lista vacia        '()`{.scheme}
+* `Una expresion del tipo (cons String ListaDeStrings)`{.scheme}
+
+. . .
+
+Predicados:
+
+* `empty?        ; Reconoce unicamente la lista vacia`{.scheme}
+* `cons?         ; Reconoce listas no vacias`{.scheme}
+
+. . .
+
+Selectores:
+
+* `first         ; Devuelve el primer elemento de una lista`{.scheme}
+* `rest          ; Devuelve la lista sin su primer elemento`{.scheme}
+
+. . .
+
+Funciones de strings:
+
+* `string-length ; Devuelve la cantidad de caracteres de un string`{.scheme}
 
 # Diseño de datos
 
