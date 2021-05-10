@@ -7,7 +7,7 @@
 ## Practica 5: Primera parte
 
 **Ejercicio 13**
-Diseñe la funcion `cortas`{.scheme} que tome una *una lista de strings* y
+Diseñe la funcion `cortas`{.scheme} que tome una *lista de strings* y
 devuelva una *lista* con aquellas palabras de longitud menor a 5.
 
 *Ejemplo:*
