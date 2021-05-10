@@ -433,38 +433,13 @@ Check failures:
 
 *All 4 test passed!*
 
-# Correccion
+# Codigo
 
 ```{.numberLines .scheme}
 ;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
 ;cortas : ListaDeStrings -> ListaDeStrings
 ;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
 
-(define (cortas l)
-    (cond [(empty? l) '()]                                   ; Caso base
-          [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
-                          (cons (first l) (cortas (rest l))) ; Caso verdadero
-                          (cortas (rest l)))]                ; Caso falso
-    )
-)
-
-;(cortas '())                                            == '()
-;(cortas (list "Palabras" "largas"))                     == '()
-;(cortas (list "Yo" "soy" "asi"))                        == (list "Yo" "soy" "asi")
-;(cortas (list "Lista" "de" "palabras" "sin" "sentido")) == (list "de" "sin")
-(check-expect (cortas '()) '())
-(check-expect (cortas (list "Palabras" "largas")) '())
-(check-expect (cortas (list "Yo" "soy" "asi")) (list "Yo" "soy" "asi"))
-(check-expect (cortas (list "Lista" "de" "palabras" "sin" "sentido")) (list "de" "sin"))
-```
-
-# Correccion
-
-```{.numberLines .scheme}
-;l: ListaDeStrings (Representa la lista de cadenas a filtrar)
-;cortas : ListaDeStrings -> ListaDeStrings
-;Dada una lista de strings, devuelve una lista con aquellas palabras de largo menor a 5.
-;La lista devuelta preserva el orden relativo de los elementos en la lista original.
 (define (cortas l)
     (cond [(empty? l) '()]                                   ; Caso base
           [(cons? l)  (if (< (string-length (first l)) 5)    ; Condicion
