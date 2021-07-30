@@ -67,3 +67,29 @@ $x$ $y$  $x+y$   $D_{0}^{\left(1\right)}\left(x+y\right)$   $D_{0}^{\left(1\righ
 . . .
 
 * $\bigvee^{\left(2\right)}=\Phi\left(D_{0}^{\left(1\right)},\Phi\left(D_{0}^{\left(1\right)},\Phi\left(\Sigma^{\left(2\right)},p_{1}^{\left(2\right)},p_{2}^{\left(2\right)}\right)\right)\right)$
+
+# Ejercicio MT
+
+Sea
+$$f(n) = \begin{cases}
+           n / 2  & $si $ n $ es par$ \\
+           3n + 1 & $si $ n $ es impar$
+         \end{cases}$$
+
+Construya una maquina de turing *F* que recibe una cinta con un numero natural
+escrito como una sucesion de puntos y con el cabezal a la izquierda del primer
+punto; y devuelva una cinta con la *minima* cantidad de aplicaciones sucesivas
+de $f$ que son necesarias para llegar a 1. La cinta final debe contener la
+respuesta solamente y debe finalizar con el cabezal a la izquierda del primer
+punto.
+
+Por ejemplo:
+
+* $f(f(f(8))) = 1$, por lo que $F(8) = 3$.
+
+* $f(f(f(f(f(f(f(f(f(13))))))))) = 1$, por lo que $F(13) = 9$.
+
+*Ayuda*: no intente resolver analiticamente cual es el mınimo numero de veces
+que se necesita aplicar $f$ para un argumento $n$ cualquiera con la intencion
+de luego implementar dicha solucion analitica. En cambio, proponga directamente
+una funcion que haga el trabajo de encontrar dicho numero por usted.
