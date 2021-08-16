@@ -1,6 +1,6 @@
 % Concurso Auxiliar de 1era categoría
 % Informática
-% Damian Ariel Marotte
+% Dámian Ariel Marotte
 
 # Análisis
 
@@ -65,7 +65,7 @@ varios resultados, un resultado o ninguno.*
 
 * Resultados: Las posiciones de los valores maximos en cada una de las filas.
 
-# Metodologia
+# Metodología
 
 * Carga datos.
 
@@ -73,7 +73,7 @@ varios resultados, un resultado o ninguno.*
 
 . . .
 
-* Maximo de una fila.
+* Posición del máximo de una fila.
 
 . . .
 
@@ -92,6 +92,8 @@ varios resultados, un resultado o ninguno.*
 . . .
 
 * Mostrar resultados.
+
+    * Para cada fila, calculamos la posicion del máximo con la función anterior.
 
 # maxf
 
@@ -140,7 +142,7 @@ Entero: posicion, columna
 
 Inicio
 	posicion <- 1
-	Repetir Para columna <- 1 Hasta 12
+	Repetir Para columna <- 2 Hasta 12
 
 
 
@@ -159,7 +161,7 @@ Entero: posicion, columna
 
 Inicio
 	posicion <- 1
-	Repetir Para columna <- 1 Hasta 12
+	Repetir Para columna <- 2 Hasta 12
 		Si arreglo[fila][columna] > arreglo[fila][posicion] Entonces
 
 		Fin Si
@@ -178,7 +180,7 @@ Entero: posicion, columna
 
 Inicio
 	posicion <- 1
-	Repetir Para columna <- 1 Hasta 12
+	Repetir Para columna <- 2 Hasta 12
 		Si arreglo[fila][columna] > arreglo[fila][posicion] Entonces
 			posicion <- columna
 		Fin Si
@@ -341,7 +343,7 @@ Entero: posicion, columna
 
 Inicio
 	posicion <- 1
-	Repetir Para columna <- 1 Hasta 12
+	Repetir Para columna <- 2 Hasta 12
 		Si arreglo[fila][columna] > arreglo[fila][posicion] Entonces
 			posicion <- columna
 		Fin Si
@@ -380,7 +382,7 @@ Fin
 #include <stdio.h>
 int maxf(int arreglo[30][12], int fila) {
     int posicion = 0;
-    for (int columna = 0; columna < 12; columna++)
+    for (int columna = 1; columna < 12; columna++)
         if (arreglo[fila][columna] > arreglo[fila][posicion])
             posicion = columna;
     return posicion;
