@@ -9,3 +9,11 @@
 # Concurso 1619 (2021)
 ## Auxiliar de Segunda Categoria
 ### Programacion I
+
+# Concurso 1624 (2021)
+## Auxiliar de Primera Categoria
+### Lenguajes Formales y Computabilidad
+
+# Concurso 1640 (2021)
+## Auxiliar de Primera Categoria
+### Informatica
