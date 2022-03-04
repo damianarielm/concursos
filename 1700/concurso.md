@@ -251,13 +251,15 @@ archivo a otro, de modo que quede exactamente igual.
 *Observación: usar `archivo.read(bytes)` para leer como máximo una cantidad
 de bytes.*
 
+. . .
+
 ```python
 # Representamos las rutas de los archivos como cadenas y la cantidad de bytes
 # con un entero.
 ```
 . . .
 ```python
-def cp(ruta_org: str, ruta_dst, n: int) -> None:
+def cp(ruta_org: str, ruta_dst: str, n: int) -> None:
 ```
 . . .
 ```python
@@ -290,7 +292,7 @@ de bytes.*
 ```{.numberLines .python}
 # Representamos las rutas de los archivos como cadenas y la cantidad de bytes
 # con un entero.
-def cp(ruta_org: str, ruta_dst, n: int) -> None:
+def cp(ruta_org: str, ruta_dst: str, n: int) -> None:
     """
     Dada las rutas de los archivos origen y destino, copia como maximo 'n'
     bytes del archivo origen en la ruta destino.
