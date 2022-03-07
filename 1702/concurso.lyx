@@ -1,0 +1,926 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+\usetheme{Warsaw}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lógica
+\end_layout
+
+\begin_layout Subtitle
+Auxiliar de 2da categoría
+\end_layout
+
+\begin_layout Author
+Damian Ariel Marotte
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Enunciado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+¿Verdadero o falso? Justifique.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\forall\lozenge\forall\square\left(p\land q\right)\equiv\forall\square\forall\lozenge\left(p\land q\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall\left[p\boldsymbol{U}\left(q\lor r\right)\right]\equiv\forall\left[p\boldsymbol{U}q\right]\lor\forall\left[p\boldsymbol{U}r\right]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
++-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\forall\lozenge\forall\square\left(p\land q\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node[state, initial, initial text=] (s1) {$s_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node[state] (s2) [right=of s1, label={$
+\backslash
+left
+\backslash
+{p,q
+\backslash
+right
+\backslash
+}$}] {$s_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+        (s1) edge node {} (s2)
+\end_layout
+
+\begin_layout Plain Layout
+
+        (s2) edge [loop right] node {} ();
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $s_{0}\to s_{1}\to s_{1}\to\ldots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\forall\square\forall\lozenge\left(p\land q\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node[state, initial, initial text=] (s1) {$s_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node[state] (s2) [right=of s1, label=below:{$
+\backslash
+left
+\backslash
+{p,q
+\backslash
+right
+\backslash
+}$}] {$s_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+        (s1) edge node {} (s2)
+\end_layout
+
+\begin_layout Plain Layout
+
+        (s2) edge [bend left] node {} (s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $s_{0}\to s_{1}\to s_{0}\to s_{1}\to s_{0}\to\ldots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\boxed{\therefore\forall\lozenge\forall\square\left(p\land q\right)\not\equiv\forall\square\forall\lozenge\left(p\land q\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Enunciado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula ${\color{red}\forall\left[p\boldsymbol{U}\left(q\lor r\right)\right]}\equiv{\color{blue}\forall\left[p\boldsymbol{U}q\right]\lor\forall\left[p\boldsymbol{U}r\right]}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\mathcal{M},s\vDash{\color{red}\forall\left[p\boldsymbol{U}\left(q\lor r\right)\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{definición de }\forall\boldsymbol{U}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{j}\vDash\left(q\lor r\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{i}\vDash p$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{definición de }\vDash\text{ para }\lor\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{j}\vDash q$
+\end_inset
+
+ o 
+\begin_inset Formula $\mathcal{M},s_{j}\vDash r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{i}\vDash p$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{definición de }\vDash\text{ para }p_{i}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $q\in L\left(s_{j}\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $r\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{i}\vDash p$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Enunciado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula ${\color{red}\forall\left[p\boldsymbol{U}\left(q\lor r\right)\right]}\equiv{\color{blue}\forall\left[p\boldsymbol{U}q\right]\lor\forall\left[p\boldsymbol{U}r\right]}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{definición de }\vDash\text{ para }p_{i}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $q\in L\left(s_{j}\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $r\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{M},s_{i}\vDash p$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{definición de }\vDash\text{ para }p_{i}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\color red
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+\begin_inset Formula $q\in L\left(s_{j}\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $r\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+\begin_inset Formula $p\in L\left(s_{i}\right)$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Enunciado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula ${\color{red}\forall\left[p\boldsymbol{U}\left(q\lor r\right)\right]}\equiv{\color{blue}\forall\left[p\boldsymbol{U}q\right]\lor\forall\left[p\boldsymbol{U}r\right]}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\mathcal{M},s\vDash{\color{blue}\forall\left[p\boldsymbol{U}q\right]\lor\forall\left[p\boldsymbol{U}r\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle \text{trabajando en forma similar}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\color blue
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color blue
+\begin_inset Formula $q\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+\begin_inset Formula $p\in L\left(s_{i}\right)$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\color blue
+o bien
+\end_layout
+
+\begin_layout Frame
+
+\color blue
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color blue
+\begin_inset Formula $r\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+\begin_inset Formula $p\in L\left(s_{i}\right)$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Formula $\equiv\left\langle e_{\lor}\text{ y }i_{\lor}\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+
+\color red
+para cada traza 
+\begin_inset Formula $s_{0}\to s_{1}\to\ldots$
+\end_inset
+
+ con 
+\begin_inset Formula $s_{0}=s$
+\end_inset
+
+ existe 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+ tal que:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+\begin_inset Formula $q\in L\left(s_{j}\right)$
+\end_inset
+
+ o 
+\begin_inset Formula $r\in L\left(s_{j}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+\begin_inset Formula $p\in L\left(s_{i}\right)$
+\end_inset
+
+ para todo 
+\begin_inset Formula $i<j$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_body
+\end_document
