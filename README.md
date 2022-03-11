@@ -17,3 +17,15 @@
 # Concurso 1640 (2021)
 ## Auxiliar de Primera Categoria
 ### Informatica
+
+# Concurso 1694 (2022)
+## Auxiliar de Primera Categoria
+### Entornos de Programacion
+
+# Concurso 1700 (2022)
+## Auxiliar de Segunda Categoria
+### Programacion II
+
+# Concurso 1701 (2022)
+## Auxiliar de Primera Categoria
+### Arquitectura del Computador
