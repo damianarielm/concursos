@@ -3,10 +3,7 @@ alfabeto = "0123456789abcdefghijklmnopqrstuvwxyz"
 def es_solucion(intento):
     return intento == "abcde"
 
-def primer_intento():
-    return "a"
-
-def siguiente(intento):
+def siguiente(intento = ""):
     if intento == alfabeto[-1] * len(intento):
         return alfabeto[0] * (len(intento) + 1)
     elif intento[-1] != alfabeto[-1]:

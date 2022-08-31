@@ -8,12 +8,37 @@
 
 Perdida de contraseña.
 
+## Analisis
+
+### Prueba
+
+* m8l
+* 6ey7mf
+* bc
+* r3pe6aeo
+
+. . .
+
+### Prueba
+
+* a
+* b
+* c
+
+## Ingredientes
+
+* Funcion `siguiente` que dado el intento actual, determina el siguiente.
+
+. . .
+
+* Funcion `es_solucion` que dado el intento actual, determina si es solucion.
+
 ## Algoritmo
 
 ```{.numberLines .python}
-from password import primer_intento, es_solucion, siguiente
+from password import es_solucion, siguiente
 
-intento_actual = primer_intento()
+intento_actual = siguiente()
 
 while not es_solucion(intento_actual):
     intento_actual = siguiente(intento_actual)
@@ -21,18 +46,36 @@ while not es_solucion(intento_actual):
 print(intento_actual)
 ```
 
+## Caracteristicas
+
+### Ventajas
+
+* Es facil de implementar.
+* Si existe una solucion, la encuentra.
+* Si existen varias, encuentra todas.
+* Si existe una solucion optima la encuentra.
+
+. . .
+
+### Desventajas
+
+* Es muy costoso.
+
+. . .
+
+### Casos de uso
+
+Solo tiene sentido cuando no se conoce una mejor forma de resolver el problema.
+
 ## Detalles
 
 ```{.numberLines .python}
 alfabeto = "0123456789abcdefghijklmnopqrstuvwxyz"
 
 def es_solucion(intento):
-    return intento == "abc123"
+    return intento == "abcde"
 
-def primer_intento():
-    return "a"
-
-def siguiente(intento):
+def siguiente(intento = ""):
     if intento == alfabeto[-1] * len(intento):
         return alfabeto[0] * (len(intento) + 1)
     elif intento[-1] != alfabeto[-1]:
@@ -46,6 +89,10 @@ def siguiente(intento):
 ## Problema
 
 Dar el vuelto.
+
+## Analisis
+
+## Ingredientes
 
 ## Algoritmo
 
@@ -62,6 +109,14 @@ while not es_solucion(eleccion_actual):
 
 print(eleccion_actual)
 ```
+
+## Caracteristicas
+
+### Ventajas
+
+### Desventajas
+
+### Casos de uso
 
 ## Detalles
 
@@ -85,6 +140,10 @@ def es_factible(eleccion):
 
 Ordenar numeros.
 
+## Analisis
+
+## Ingredientes
+
 ## Algoritmo
 
 ```{.numberLines .python}
@@ -101,6 +160,14 @@ def resolver(problema):
 
 print(resolver(problema))
 ```
+
+## Caracteristicas
+
+### Ventajas
+
+### Desventajas
+
+### Casos de uso
 
 ## Detalles
 
