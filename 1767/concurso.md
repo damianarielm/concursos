@@ -10,20 +10,23 @@ Perdida de contraseña.
 
 ## Analisis
 
-### Prueba
+### Intentos desordenados
 
 * m8l
 * 6ey7mf
 * bc
 * r3pe6aeo
+* 7
 
 . . .
 
-### Prueba
+### Intentos ordenados
 
 * a
 * b
 * c
+* d
+* e
 
 ## Ingredientes
 
@@ -84,6 +87,46 @@ def siguiente(intento = ""):
         return siguiente(intento[:-1]) + alfabeto[0]
 ```
 
+## Ejemplo
+
+* a
+
+. . .
+
+* b
+
+. . .
+
+* c
+
+. . .
+
+* ...
+* z
+
+. . .
+
+* aa
+
+. . .
+
+* ab
+
+. . .
+
+* ac
+* ...
+
+. . .
+
+* aaaaa
+* ...
+
+. . .
+
+* abcdd
+* abcde
+
 # Greedy
 
 ## Problema
@@ -91,6 +134,12 @@ def siguiente(intento = ""):
 Dar el vuelto.
 
 ## Analisis
+
+Observemos que en principio la solucion de fuerza bruta sigue estando
+disponibles.
+
+Sin embargo a veces es preferible resignar presicion con el objetivo de ganar
+velocidad.
 
 ## Ingredientes
 
@@ -152,7 +201,7 @@ necesariamente la mejor.
 
 ```{.numberLines .python}
 total = 6
-candidatos = [4] * total + [3] * total + [1] * total
+candidatos = [4] * 2 + [3] * 2 + [1] * 2
 
 def es_solucion(eleccion_actual):
     return sum(eleccion_actual) == total
@@ -163,6 +212,60 @@ def elegir_candidato():
 def es_factible(eleccion):
     return sum(eleccion) <= total
 ```
+
+## Ejemplo
+
+### Iteracion 0
+
+* `candidatos = [4, 4, 3, 3, 1, 1]`.
+
+. . .
+
+### Iteracion 1
+
+* `x = 4`.
+* `candidatos = [4, 3, 3, 1, 1]`.
+* `eleccion_actual = [4]`.
+
+. . .
+
+### Iteracion 2
+
+* `x = 4`.
+* `candidatos = [3, 3, 1, 1]`.
+* `eleccion_actual = [4]`.
+
+. . .
+
+### Iteracion 3
+
+* `x = 3`.
+* `candidatos = [3, 1, 1]`.
+* `eleccion_actual = [4]`.
+
+## Ejemplo
+
+### Iteracion 4
+
+* `x = 3`.
+* `candidatos = [1, 1]`.
+* `eleccion_actual = [4]`.
+
+. . .
+
+### Iteracion 5
+
+* `x = 1`.
+* `candidatos = [1]`.
+* `eleccion_actual = [4, 1]`.
+
+. . .
+
+### Iteracion 6
+
+* `x = 1`.
+* `candidatos = []`.
+* `eleccion_actual = [4, 1, 1]`.
 
 # Divide & Conquer
 
@@ -281,4 +384,84 @@ def fusionar(solucion1, solucion2):
             solucion.append(solucion2.pop(0))
 
     return solucion + (solucion1 if solucion1 else solucion2)
+```
+
+## Ejemplo
+
+### Iteracion 0
+
+```python
+solucion1 = [1, 3, 5, 22]
+solucion2 = [-1, 0, 2, 6]
+solucion = []
+```
+
+. . .
+
+### Iteracion 1
+
+```python
+solucion1 = [1, 3, 5, 22]
+solucion2 = [0, 2, 6]
+solucion = [-1]
+```
+
+. . .
+
+### Iteracion 2
+
+```python
+solucion1 = [1, 3, 5, 22]
+solucion2 = [2, 6]
+solucion = [-1, 0]
+```
+
+. . .
+
+### Iteracion 3
+
+```python
+solucion1 = [3, 5, 22]
+solucion2 = [2, 6]
+solucion = [-1, 0, 1]
+```
+
+## Ejemplo
+
+### Iteracion 4
+
+```python
+solucion1 = [3, 5, 22]
+solucion2 = [6]
+solucion = [-1, 0, 1, 2]
+```
+
+. . .
+
+### Iteracion 5
+
+```python
+solucion1 = [5, 22]
+solucion2 = [6]
+solucion = [-1, 0, 1, 2, 3]
+```
+
+. . .
+
+### Iteracion 6
+
+```python
+solucion1 = [22]
+solucion2 = [6]
+solucion = [-1, 0, 1, 2, 3, 5]
+```
+
+. . .
+
+### Iteracion 7
+
+```python
+solucion1 = [22]
+solucion2 = []
+solucion = [-1, 0, 1, 2, 3, 5, 6]
 ```
