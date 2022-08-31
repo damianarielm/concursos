@@ -142,7 +142,53 @@ Ordenar numeros.
 
 ## Analisis
 
+```
+                       [3, 5, 22, 1, 0, 2, -1, 6]
+```
+. . .
+```
+                           /                \
+                     [3, 5, 22, 1]    [0, 2, -1, 6]
+```
+. . .
+```
+                        /     \          /      \
+                    [3, 5]  [22, 1]   [0, 2]  [-1, 6]
+```
+. . .
+```
+                     /   \   /    \    /   \    /  \
+                   [3]  [5] [22] [1]  [0] [2] [-1] [6]
+```
+. . .
+```
+                     \   /   \    /    \   /    \  /
+                    [3, 5]  [1, 22]   [0, 2]  [-1, 6]
+```
+. . .
+```
+                        \     /          \      /
+                     [1, 3, 5, 22]    [-1, 0, 2, 6]
+```
+. . .
+```
+                           \                /
+                       [-1, 0, 1, 2, 3, 5, 6, 22]
+```
 ## Ingredientes
+
+* Funcion `es_caso_base` que dado un problema determina si el problema es
+trivial.
+
+. . .
+
+* Funcion `dividir` que dado un problema, lo divide en dos problemas mas
+pequeños.
+
+. . .
+
+* Funcion `fusionar` que dados dos problemas resueltos, los combina en una
+unica solucion.
 
 ## Algoritmo
 
@@ -165,9 +211,23 @@ print(resolver(problema))
 
 ### Ventajas
 
+* Es facil de implementar.
+* Suele ser un algoritmo rapido.
+* Si existe una solucion, la encuentra.
+
+. . .
+
 ### Desventajas
 
+* No puede aplicarse siempre.
+* Puede consumir mucha memoria.
+
+. . .
+
 ### Casos de uso
+
+Solo puede usarse si es factible dividir el problema y combinar las soluciones
+independientes para formar la solucion general.
 
 ## Detalles
 
