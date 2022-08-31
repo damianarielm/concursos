@@ -94,6 +94,22 @@ Dar el vuelto.
 
 ## Ingredientes
 
+* Un conjunto de `candidatos` de donde elegir.
+
+. . .
+
+* Funcion `elegir_candidato` que elige la mejor opcion del momento.
+
+. . .
+
+* Funcion `es_factible` que determina si una determinada eleccion puede llevar
+a la solucion.
+
+. . .
+
+* Funcion `es_solucion` que dada la seleccion actual, determina si es una
+solucion al problema.
+
 ## Algoritmo
 
 ```{.numberLines .python}
@@ -114,9 +130,23 @@ print(eleccion_actual)
 
 ### Ventajas
 
+* Es facil de implementar.
+* Si existe una solucion, la encuentra.
+* Es un algoritmo rapido.
+* Usa poca memoria.
+
+. . .
+
 ### Desventajas
 
+* No siempre encuentra la mejor solucion.
+
+. . .
+
 ### Casos de uso
+
+Podemos usar este algoritmo cuando necesitamos una buena solucion, aunque no
+necesariamente la mejor.
 
 ## Detalles
 
