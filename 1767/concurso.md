@@ -6,7 +6,9 @@
 
 ## Problema
 
-Perdida de contraseña.
+Un usuario guarda informacion importante adentro de un archivo comprimido.
+Por desgracias, ha olvidado la contraseña y ahora no puede acceder a sus
+archivos.
 
 ## Analisis
 
@@ -131,7 +133,10 @@ def siguiente(intento = ""):
 
 ## Problema
 
-Dar el vuelto.
+El cajero de un pais que cuenta con monedas de denominacion 4, 3 y 1 tiene que
+dar un vuelto de seis unidades.
+Se pregunta en que forma debe hacerlo para minimizar la cantidad de monedas
+que debe entregar.
 
 ## Analisis
 
@@ -271,7 +276,8 @@ def es_factible(eleccion):
 
 ## Problema
 
-Ordenar numeros.
+Se han guardado en una lista una cantidad de valores numericos.
+Para poder trabajar con ellos adecuadamente, es necesario ordenarlos.
 
 ## Analisis
 
