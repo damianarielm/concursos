@@ -85,3 +85,197 @@ del problema, y cada arista es una de las acciones disponibles en el.
 La idea de un recorrido en profundidad es expandir siempre el nodo mas
 profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
 atras y se continua con el siguiente.
+
+. . .
+
+![Empezamos con el nodo inicial](1.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Realizamos el test objetivo](2.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](3.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](4.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](5.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](6.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](7.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](8.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](9.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](10.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](11.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](12.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](13.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](14.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](15.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](16.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Generamos sus sucesores](17.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Consideramos el siguiente nodo](18.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en profundidad
+
+La idea de un recorrido en profundidad es expandir siempre el nodo mas
+profundo del grafo hasta que ya no sea posible, en cuyo caso se vuelve hacia
+atras y se continua con el siguiente.
+
+![Recorrido en profundidad](profundidad.png "arbol"){width=60%}
+
+------------------------------
+
+### Recorrido en anchura
+
+La búsqueda primero en anchura es una estrategia sencilla en la que se expande
+primero el nodo raíz, a continuación se expanden todos los sucesores del nodo
+raíz, después sus sucesor, etc.
+
+![Recorrido en anchura](anchura.png "arbol"){width=60%}
