@@ -95,22 +95,11 @@ Ejercicio Final
 \begin_layout Standard
 \align block
 Construya una máquina de Turing sobre el alfabeto 
-\begin_inset Formula $\Sigma=\left\{ \CIRCLE,a,b,c,\ldots,z\right\} $
+\begin_inset Formula $\Sigma=\left\{ 0,1,2,3,4,5,6,7\right\} $
 \end_inset
 
 ,
- que reciba una secuencia de palabras separadas por blancos,
- y borre de la cinta aquellas palabras que pertenecen al lenguaje español.
-\end_layout
-
-\begin_layout Standard
-\align block
-Puede asumir que dispone de una máquina 
-\begin_inset Formula $X$
-\end_inset
-
- que escribe todas las palabras del idioma español separadas por un blanco;
- y que termina con el cabezal en donde empezó.
+ que reciba una cinta con un número en binario y lo transforme en octal.
 \end_layout
 
 \begin_layout Section*
@@ -125,7 +114,7 @@ Si la máquina comienza con esta cinta:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\cdots\square\square\check{\square}un\square ejersisio\square dificil\square\square\square\cdots
+\cdots\square\square\check{\square}101010110\square\square\square\cdots
 \]
 
 \end_inset
@@ -142,7 +131,7 @@ Deberá terminar con una cinta como esta:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\cdots\square\square\check{\square}\square\square\square ejersisio\square\square\square\square\square\square\square\square\square\square\square\cdots
+\cdots\square\square\check{\square}526\square\square\square\cdots
 \]
 
 \end_inset
