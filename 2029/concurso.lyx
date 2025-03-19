@@ -1,0 +1,2502 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+\usetheme{Warsaw}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language spanish-mexico
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lenguajes Formales y Computabilidad
+\end_layout
+
+\begin_layout Subtitle
+J.
+ T.
+ P.
+\end_layout
+
+\begin_layout Author
+Damian Ariel Marotte
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Enunciado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Construya un AEF determinista para los lenguajes:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }110\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L_{2}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ es cualquier cadena excepto }11\text{ y }111\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Repaso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\left\{ 0,1\right\} ^{*}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $=\left\{ \lambda,0,1,00,01,10,11,\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $000,001,010,011,100,101,110,111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $0000,0001,0010,0011,0100,0101,0110,0111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\left.1000,1001,1010,1011,1100,1101,1110,1111,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\left\{ 0,1\right\} ^{*}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $=\left\{ \lambda,0,1,00,01,10,11,\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $000,001,010,011,100,101,\boldsymbol{{\color{green}110}},111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $0000,0001,0010,0011,0100,0101,\boldsymbol{0{\color{green}110}},0111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\left.1000,1001,1010,1011,\boldsymbol{{\color{green}110}0},1101,\boldsymbol{1{\color{green}110}},1111,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Subcadena 110
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Subcadena 110
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Completando el automata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop right] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Completando el automata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop right] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge [loop below] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Completando el automata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop right] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge [loop below] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge [bend left] node {$0$} (sigma0)
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Completando el automata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state] (sigma0) {$$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop right] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge [loop below] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge [bend left] node {$0$} (sigma0)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+L_{1}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ contiene la subcadena }{\color{green}110}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Completando el automata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{110}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$
+\backslash
+textcolor{green}{1}$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$
+\backslash
+textcolor{green}{0}$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop right] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge [loop below] node {$1$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge [bend left] node {$0$} (sigma0)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge [loop below] node {$0$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\left\{ 0,1\right\} ^{*}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $=\left\{ {\color{green}\lambda},{\color{green}0},{\color{green}1},{\color{green}00},{\color{green}01},{\color{green}10},11,\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula ${\color{green}000},{\color{green}001},{\color{green}010},{\color{green}011},{\color{green}100},{\color{green}101},{\color{green}110},111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula ${\color{green}0000},{\color{green}0001},{\color{green}0010},{\color{green}0011},{\color{green}0100},{\color{green}0101},{\color{green}0110},{\color{green}0111},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\left.{\color{green}1000},{\color{green}1001},{\color{green}1010},{\color{green}1011},{\color{green}1100},{\color{green}1101},{\color{green}1110},{\color{green}1111},{\color{green}\ldots}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{2}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ es cualquier cadena excepto }11\text{ y }111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula 
+\[
+\left\{ 0,1\right\} ^{*}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $=\left\{ \lambda,0,1,00,01,10,{\color{green}11},\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $000,001,010,011,100,101,110,{\color{green}111},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $0000,0001,0010,0011,0100,0101,0110,0111,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\left.1000,1001,1010,1011,1100,1101,1110,1111,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$1$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ;
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$1$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$1$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ;
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{111}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$1$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$1$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$1$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ;
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{111}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ below = of sigma2] (sigma4) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$1$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$1$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$1$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge [bend right] node [below] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node [below] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node [left] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge node [above] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [bend left] node [below] {$1$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ;
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->] (sigma4) edge [out=210,in=250,looseness=5] node [below] {$1$} (sigma4);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->] (sigma4) edge [out=280,in=320,looseness=5] node [below] {$0$} (sigma4);
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{L_{2}}=\left\{ 11,111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ initial,
+ initial text=inicio] (sigma0) {$
+\backslash
+sigma_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ right= of sigma0] (sigma1) {$
+\backslash
+sigma_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma1] (sigma2) {$
+\backslash
+sigma_{11}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ right= of sigma2] (sigma3) {$
+\backslash
+sigma_{111}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[state,
+ accepting,
+ below = of sigma2] (sigma4) {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+path[->]
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge node {$1$} (sigma1)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node {$1$} (sigma2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node {$1$} (sigma3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma0) edge [bend right] node [below] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma1) edge node [below] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma2) edge node [left] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge node [above] {$0$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+		(sigma3) edge [bend left] node [below] {$1$} (sigma4)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ;
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->] (sigma4) edge [out=210,in=250,looseness=5] node [below] {$1$} (sigma4);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->] (sigma4) edge [out=280,in=320,looseness=5] node [below] {$0$} (sigma4);
+\end_layout
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{\overline{L_{2}}}=L_{2}=\left\{ w\in\left\{ 0,1\right\} ^{*}/w\text{ es cualquier cadena excepto }11\text{ y }111\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ejercicio 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align block
+Construya una máquina de Turing sobre el alfabeto 
+\begin_inset Formula $\Sigma=\left\{ \CIRCLE,a,b,c,\ldots,z\right\} $
+\end_inset
+
+,
+ que reciba una secuencia de palabras separadas por blancos,
+ y borre de la cinta aquellas palabras que pertenecen al lenguaje español.
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Ejemplo:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si la máquina comienza con esta cinta:
+\begin_inset Formula 
+\[
+\cdots\square\square\check{\square}un\square ejersisio\square dificil\square\square\square\cdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Deberá terminar con una cinta como esta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cdots\square\square\check{\square}\square\square\square ejersisio\square\square\square\square\square\square\square\square\square\square\square\cdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Puede asumir que dispone de una máquina 
+\begin_inset Formula $X$
+\end_inset
+
+ que escribe todas las palabras del idioma español separadas por un blanco;
+ y que termina con el cabezal en donde empezó.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
